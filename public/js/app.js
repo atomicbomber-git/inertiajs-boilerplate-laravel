@@ -2046,6 +2046,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38204,13 +38208,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    class: {
-                      "is-invalid": _vm.get(
-                        this.$page.errors,
-                        "errors.username[0]",
-                        false
-                      )
-                    },
+                    class: { "is-invalid": _vm.$page.errors.username },
                     attrs: {
                       type: "text",
                       id: "username",
@@ -38227,11 +38225,15 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "invalid-feedback" }, [
-                    _vm._v(
-                      _vm._s(_vm.get(this.$page.errors, "username[0]", false))
-                    )
-                  ])
+                  _vm.$page.errors.username
+                    ? _c("div", { staticClass: "invalid-feedback" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.$page.errors.username) +
+                            "\n              "
+                        )
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [

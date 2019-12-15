@@ -15,12 +15,16 @@
               <input
                 v-model="username"
                 class="form-control"
-                :class="{'is-invalid': get(this.$page.errors, 'errors.username[0]', false)}"
+                :class="{'is-invalid': $page.errors.username }"
                 type="text"
                 id="username"
                 placeholder="Username"
               />
-              <div class="invalid-feedback">{{ get(this.$page.errors, 'username[0]', false) }}</div>
+              <div
+                v-if="$page.errors.username"
+                class="invalid-feedback">
+                  {{ $page.errors.username }}
+                </div>
             </div>
 
             <div class="form-group">
