@@ -38206,7 +38206,7 @@ var render = function() {
                     staticClass: "form-control",
                     class: {
                       "is-invalid": _vm.get(
-                        this.error_data,
+                        this.$page.errors,
                         "errors.username[0]",
                         false
                       )
@@ -38229,9 +38229,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "invalid-feedback" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm.get(this.error_data, "errors.username[0]", false)
-                      )
+                      _vm._s(_vm.get(this.$page.errors, "username[0]", false))
                     )
                   ])
                 ]),

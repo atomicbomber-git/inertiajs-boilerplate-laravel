@@ -29,13 +29,13 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share([
             "app" => [
                 "name" => Config::get("app.name"),
+            ],
 
-                'errors' => function () {
-                    return Session::get('errors')
-                        ? Session::get('errors')->getBag('default')->getMessages()
-                        : (object) [];
-                },
-            ]
+            "errors" => function () {
+                return Session::get("errors")
+                    ? Session::get("errors")->getBag('default')->getMessages()
+                    : (object) [];
+            },
         ]);
     }
 }
