@@ -14,7 +14,7 @@ class AddUsernameFieldToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string("username")->index();
+            $table->string("username")->unique()->index();
         });
     }
 

@@ -16,7 +16,4 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-Route::get('/', [AdminDashboardController::class, 'show']);
-
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', [AdminDashboardController::class, 'show'])->name("admin.dashboard.show");

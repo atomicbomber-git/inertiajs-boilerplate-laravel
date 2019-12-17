@@ -1961,7 +1961,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1981,7 +1980,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Components/Navbar */ "./resources/js/Components/Navbar.vue");
-//
 //
 //
 //
@@ -2076,7 +2074,6 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     get: __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js").get,
     onFormSubmit: function onFormSubmit() {
-      alert("TEST");
       this.$inertia.post("/login", this.formData);
     }
   }
@@ -38136,11 +38133,17 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card card-body" }, [
-          _c("h1", [_vm._v(" Inertia Boilerplate ")]),
+          _c("h1", [_vm._v("Dashboard")]),
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime iste ullam explicabo veniam est. Ducimus, totam, excepturi laboriosam praesentium blanditiis incidunt magni culpa ipsum dolor inventore modi sunt rerum amet!\n        "
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime iste ullam explicabo veniam est. Ducimus, totam, excepturi laboriosam praesentium blanditiis incidunt magni culpa ipsum dolor inventore modi sunt rerum amet!"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur nobis ab velit, ad libero facere perspiciatis ex ipsam unde sit porro provident odit nostrum voluptates, animi soluta consequatur alias repellat?``"
             )
           ])
         ])
@@ -38227,18 +38230,14 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$page.errors.username
                     ? _c("div", { staticClass: "invalid-feedback" }, [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(_vm.$page.errors.username) +
-                            "\n              "
-                        )
+                        _vm._v(_vm._s(_vm.$page.errors.username[0]))
                       ])
                     : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("label", { attrs: { for: "password" } }, [
-                    _vm._v("Password:")
+                    _vm._v(" Password: ")
                   ]),
                   _vm._v(" "),
                   _c("input", {
@@ -38251,15 +38250,9 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    class: {
-                      "is-invalid": _vm.get(
-                        this.error_data,
-                        "errors.password[0]",
-                        false
-                      )
-                    },
+                    class: { "is-invalid": _vm.$page.errors.password },
                     attrs: {
-                      type: "text",
+                      type: "password",
                       id: "password",
                       placeholder: "Password"
                     },
@@ -38274,18 +38267,16 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "invalid-feedback" }, [
-                    _vm._v(
-                      _vm._s(
-                        _vm.get(this.error_data, "errors.password[0]", false)
-                      )
-                    )
-                  ])
+                  _vm.$page.errors.password
+                    ? _c("div", { staticClass: "invalid-feedback" }, [
+                        _vm._v(_vm._s(_vm.$page.errors.password[0]))
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("label", { attrs: { for: "password_confirmation" } }, [
-                    _vm._v("Password Confirmation:")
+                    _vm._v(" Password Confirmation: ")
                   ]),
                   _vm._v(" "),
                   _c("input", {
@@ -38306,7 +38297,7 @@ var render = function() {
                       )
                     },
                     attrs: {
-                      type: "text",
+                      type: "password",
                       id: "password_confirmation",
                       placeholder: "Password Confirmation"
                     },
@@ -38323,13 +38314,15 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "invalid-feedback" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm.get(
-                          this.error_data,
-                          "errors.password_confirmation[0]",
-                          false
-                        )
-                      )
+                      "\n                             " +
+                        _vm._s(
+                          _vm.get(
+                            this.error_data,
+                            "errors.password_confirmation[0]",
+                            false
+                          )
+                        ) +
+                        "\n                        "
                     )
                   ])
                 ]),
@@ -38350,9 +38343,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "d-flex justify-content-end" }, [
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _vm._v("\n                Log In\n            ")
-      ])
+      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Log In")])
     ])
   }
 ]

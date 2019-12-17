@@ -24,13 +24,6 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
      * Create a new controller instance.
      *
      * @return void
@@ -54,7 +47,12 @@ class LoginController extends Controller
     {
         $request->validate([
             $this->username() => 'required|string',
-            'password' => 'required|string',
+            'password' => 'required|string|confirmed',
         ]);
+    }
+
+    public function redirectTo()
+    {
+        return route("admin.dashboard.show");
     }
 }
