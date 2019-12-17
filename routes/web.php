@@ -12,8 +12,10 @@
 */
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminHelpController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-Route::get('/', [AdminDashboardController::class, 'show'])->name("admin.dashboard.show");
+Route::get('/admin/dashboard/show', [AdminDashboardController::class, 'show'])->name("admin.dashboard.show");
+Route::get('/admin/help/show', [AdminHelpController::class, 'show'])->name("admin.help.show");
