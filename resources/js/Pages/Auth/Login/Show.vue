@@ -1,7 +1,5 @@
 <template>
     <div>
-        <navbar></navbar>
-
         <div class="container">
             <div class="card">
                 <div class="card-body">
@@ -42,22 +40,10 @@
                             >{{ $page.errors.password[0] }}</div>
                         </div>
 
-                        <div class='form-group'>
-                            <label for='password_confirmation'> Password Confirmation: </label>
-                            <input
-                                v-model='password_confirmation'
-                                class='form-control'
-                                :class="{'is-invalid': get(this.error_data, 'errors.password_confirmation[0]', false)}"
-                                type='password'
-                                id='password_confirmation'
-                                placeholder='Password Confirmation'>
-                            <div class='invalid-feedback'>
-                                 {{ get(this.error_data, 'errors.password_confirmation[0]', false) }}
-                            </div>
-                        </div>
-
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-primary">Log In</button>
+                            <button class="btn btn-primary">
+                                Log In
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -67,12 +53,9 @@
 </template>
 
 <script>
-import Navbar from "../../../Components/Navbar";
 
 export default {
-    components: {
-        Navbar
-    },
+    layout: require("@/Components/Layout").default,
 
     data() {
         return {

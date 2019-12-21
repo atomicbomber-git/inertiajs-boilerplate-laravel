@@ -29,29 +29,36 @@
                         </inertia-link>
                     </li>
 
-                    <li class="nav-item">
-                        <li
-                            class="nav-item"
-                            :class="{ active: $page.app.route === 'admin/help/show' }">
-                            <inertia-link
-                                class="nav-link"
-                                href="/admin/help/show"
-                                preserve-scroll>
-                                Help
-                                <span
-                                    v-if="$page.app.route === 'admin/help/show'"
-                                    class="sr-only">
-                                    (current)
-                                </span>
-                            </inertia-link>
-                        </li>
+                    <li
+                        class="nav-item"
+                        :class="{ active: $page.app.route === 'admin/help/show' }">
+                        <inertia-link
+                            class="nav-link"
+                            href="/admin/help/show"
+                            preserve-scroll>
+                            Help
+                            <span
+                                v-if="$page.app.route === 'admin/help/show'"
+                                class="sr-only">
+                                (current)
+                            </span>
+                        </inertia-link>
                     </li>
                 </ul>
             </div>
+
+            <inertia-link
+                href="/logout"
+                method="post"
+                class="btn btn-danger"
+                >
+                Log Out
+            </inertia-link>
         </div>
     </nav>
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>

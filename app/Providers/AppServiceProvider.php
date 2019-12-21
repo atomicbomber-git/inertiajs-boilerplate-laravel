@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share([
             "app" => [
                 "name" => Config::get("app.name"),
+                "user" => fn() => Auth::user(),
                 "route" => function() {
                     return Route::current()->uri();
                 },
